@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career Coach - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+        // Redirect to dashboard if already logged in
+        if (localStorage.getItem('access_token')) {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</head>
+<body>
+    <nav style="background: transparent; border-bottom: none; position: absolute; top:0; left:0; width: 100%;">
+        <a href="landing.html" style="color: var(--text-secondary); margin-left: 2rem; display: flex; align-items: center; gap: 5px; margin-top:1rem;">
+            ← Back to Home
+        </a>
+    </nav>
+    <div class="center-content container">
+        <div class="glass-panel auth-box">
+            <h2 id="form-title">Welcome Back</h2>
+            <p id="form-subtitle" style="color: var(--text-secondary); margin-bottom: 24px;">Sign in to your AI Career Coach</p>
+            
+            <div id="msg-box" class="hidden"></div>
+
+            <form id="auth-form">
+                <div id="username-group" class="hidden">
+                    <label for="username">Set Username</label>
+                    <input type="text" id="username" placeholder="Choose a username">
+                </div>
+                <div id="email-group" class="hidden">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email">
+                </div>
+
+                <div id="login-identifier-group">
+                    <label for="login-identifier">Username</label>
+                    <input type="text" id="login-identifier" required placeholder="Enter your username">
+                </div>
+
+                <div id="password-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter your password">
+                </div>
+
+                <button type="submit" id="submit-btn" style="margin-top: 8px;">Login</button>
+            </form>
+
+            <p style="text-align: center; margin-top: 24px; font-size: 0.875rem;">
+                <span id="toggle-text">Don't have an account?</span> 
+                <a href="#" id="toggle-mode">Sign up</a>
+            </p>
+        </div>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+</html>
