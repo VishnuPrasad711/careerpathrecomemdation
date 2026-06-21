@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career Coach - Elevate Your Future</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            display: block;
+            min-height: 100vh;
+            overflow-y: auto;
+            background-color: #050505; /* Deep rich dark background */
+        }
+
+        /* Ambient glowing background */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(88, 166, 255, 0.15), transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(210, 168, 255, 0.15), transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(46, 160, 67, 0.05), transparent 50%);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #58a6ff 0%, #d2a8ff 50%, #ff7b72 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            max-width: 900px;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #58a6ff 0%, #3182ce 100%);
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 30px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(88, 166, 255, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(88, 166, 255, 0.4);
+        }
+
+        /* Floating UI Elements (Abstract decor) */
+        .floating-element {
+            position: absolute;
+            background: rgba(22, 27, 34, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-1 {
+            top: 20%;
+            left: 10%;
+            width: 250px;
+            height: 120px;
+            animation-delay: 0s;
+        }
+
+        .float-2 {
+            bottom: 25%;
+            right: 8%;
+            width: 300px;
+            height: 180px;
+            animation-delay: -2s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(22, 27, 34, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(30, 36, 45, 0.7);
+            border-color: rgba(88, 166, 255, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: rgba(88, 166, 255, 0.1);
+            padding: 1rem;
+            border-radius: 16px;
+        }
+
+        /* Mock UI Lines for floating elements */
+        .mock-line {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-glow"></div>
+
+    <nav style="background: transparent; border-bottom: none; padding-top: 2rem;">
+        <a href="landing.html" class="nav-logo" style="font-size: 1.5rem;">AI <span style="font-weight: 400; opacity: 0.8;">Career Coach</span></a>
+        <div class="nav-links">
+            <a href="index.html" style="color: var(--text-primary); margin-right: 1.5rem; font-weight: 500;">Login</a>
+            <a href="index.html" style="background: var(--surface-color); padding: 0.6rem 1.2rem; border-radius: 8px; border: 1px solid var(--border-color); color: var(--text-primary); font-weight: 500;">Sign Up</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="floating-element float-1">
+            <div style="padding: 1.5rem;">
+                <div class="mock-line" style="width: 40%; background: var(--primary-color);"></div>
+                <div class="mock-line" style="width: 80%;"></div>
+                <div class="mock-line" style="width: 60%;"></div>
+            </div>
+        </div>
+        <div class="floating-element float-2">
+            <div style="padding: 1.5rem;">
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: #d2a8ff; opacity: 0.2;"></div>
+                    <div>
+                        <div class="mock-line" style="width: 100px; height: 10px; margin-top: 5px;"></div>
+                        <div class="mock-line" style="width: 60px; height: 8px; opacity: 0.5;"></div>
+                    </div>
+                </div>
+                <div class="mock-line" style="width: 90%;"></div>
+                <div class="mock-line" style="width: 70%;"></div>
+                <div class="mock-line" style="width: 85%;"></div>
+            </div>
+        </div>
+
+        <h1 style="color:white; z-index: 10;">
+            Unlock Your Potential with <br>
+            <span class="gradient-text">Intelligent Coaching</span>
+        </h1>
+        <p style="z-index: 10;">
+            Upload your resume and get instantly matched with career paths, personalized interview coaching, and daily mini-games to sharpen your coding skills.
+        </p>
+        <a href="index.html" class="cta-button" style="z-index: 10;">Start Your Journey Now</a>
+    </div>
+
+    <div class="features">
+        <h2 class="section-title">Everything you need to land your dream job</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Instant Resume Analysis</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6;">Our AI extracts your skills and cross-references them against live job market data to give you the perfect role matches.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Personal AI Coach</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6;">Chat with a context-aware career coach at any time. Get advice on networking, negotiations, and interview answers.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔥</div>
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">Daily Challenge Streaks</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6;">Stay motivated during the job hunt context! Play daily coding and trivia mini-games, earn points, and build your login streaks.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 4rem 2rem; color: var(--text-secondary); border-top: 1px solid var(--border-color); margin-top: 4rem;">
+        <p>© 2026 AI Career Coach. Built for the modern engineer.</p>
+    </footer>
+
+    <script>
+        // If they already have a token, bypass the landing page entirely
+        if (localStorage.getItem('access_token')) {
+            window.location.href = 'dashboard.html';
+        }
+    </script>
+</body>
+</html>
